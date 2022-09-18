@@ -6,3 +6,11 @@ export TCP_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgatew
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
 
 export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
+
+
+# how to get started for istio
+
+## enable istio on kubernetes
+```shell
+kubectl label namespace default istio-injection=enabled
+```
